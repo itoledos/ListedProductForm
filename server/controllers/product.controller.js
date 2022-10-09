@@ -4,7 +4,6 @@ const {Producto} = require("../models/product.model")
 
 module.exports.createProduct = (req,res) => {
   const { title, price, description} = req.body;
-  // mongoose viene con la función create
   Producto.create({
     title: title,
     price: price,
@@ -12,10 +11,6 @@ module.exports.createProduct = (req,res) => {
   })
   .then(producto=>res.json(producto))
   .catch(err=>res.json(err))
-
-  // dentro de res.json, si creamos un objeto directamente, debe
-  // llevar el formato de {name: name, age:age, etc}
-
 }
 
 module.exports.getAllProducts = (req,res) => {
@@ -23,10 +18,6 @@ module.exports.getAllProducts = (req,res) => {
   Producto.find()
   .then(productos=>res.json({'products': productos}))
   .catch(err=>res.json(err))
-
-  // dentro de res.json, si creamos un objeto directamente, debe
-  // llevar el formato de {name: name, age:age, etc}
-
 }
 
 module.exports.getProduct = (req,res) => {

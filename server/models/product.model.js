@@ -8,7 +8,6 @@ const ProductoSchema = new mongoose.Schema({
     description: {type: String,
             required: [true, 'Description is required']}
 }, {timestamps: true});
-// La segunda parte de Schema corresponde a las propiedades adicionales
 
 module.exports.Producto = mongoose.model("Producto", ProductoSchema);
 

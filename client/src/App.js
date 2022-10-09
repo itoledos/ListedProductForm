@@ -1,10 +1,8 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from './Main';
-import Search from './components/Search';
 import ProductList from './components/ProductList';
-import {Link, Nav, NavLink} from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Update from './components/Update';
 
 
@@ -20,8 +18,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        {/* <Main/> */}
+
           <Routes>
+            
             <Route path="/" 
               element={<Main allData={allData} 
               setAllData={setAllData} 
